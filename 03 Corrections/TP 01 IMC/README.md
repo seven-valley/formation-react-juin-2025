@@ -175,7 +175,6 @@ interface Iinfo {
   tranche: string;
   classe: string;
   kilo: string;
-  kilo: string;
   poids: string;
 }
 export default function App() {
