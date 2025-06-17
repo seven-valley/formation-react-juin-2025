@@ -65,6 +65,6 @@ p1.age>17 & p1.age < 19 ? console.log('GOOD') :console.log(' pas GOOD');
 
 ## Et enfin Littéraux de gabarits + ternaire
 ```js
-console.log()
+console.log(`info ${p1.age >18 ? 'ok':'no good'}`);
 ```
 
