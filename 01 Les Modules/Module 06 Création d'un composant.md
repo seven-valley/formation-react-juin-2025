@@ -65,8 +65,9 @@ Création du fichier <code>PersonneComponent.tsx</code>
 
 
 ### Personne.ts
-
+  
 <img src="../img/06/02-component.png" width="200" />
+  
 
 ```
 |-- src
@@ -87,9 +88,9 @@ export class Personne{
 ```
 
 ### PersonneComponent.tsx
-
+  
 <img src="../img/06/01-component.png" width="200" />
-
+  
 ```
 |-- src
         |-- components
