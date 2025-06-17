@@ -5,7 +5,7 @@ Création du fichier <code>Personne.jsx</code>
 
 ```
 |-- src
-        |-- models
+        |-- components
             |-- Personne.js
 ```
 
