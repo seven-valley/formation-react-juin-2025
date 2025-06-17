@@ -104,37 +104,64 @@ export default function App() {
 
 # le typeScript
 ```tsx
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm } from "react-hook-form";
+
+interface IFormData {
+  prenom: string;
+  nom: string;
+}
 
 export default function App() {
-  const {register,  handleSubmit ,formState: { errors },} = useForm();
-  
-  interface IFormInput {
-    appareil: string
-    status: string
-
-  }
-  
-  const valider: SubmitHandler<IFormInput> =(data:any)=>{
-    console.log(data);
-  }
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormData>();
+  const valider = handleSubmit((data) => console.log(data));
   return (
     <>
-      <form onSubmit={handleSubmit(valider)} >
-        <input {...register('appareil',{
-					required: true, maxLength: 20
-					
-				})} /><br />
-        {/* error message => appareil */}
-			{errors.appareil && <span>Vous devez ecrire le nom </span>}
-      <br /> <input {...register('statut',{ pattern: /^[A-Za-z]+$/i })} />
-        <button type="submit">GO</button>
-      </form>
-     
+      <div className="container">
+        <div className="col-4">
+          <form onSubmit={valider}>
+            
+  <label htmlFor="prenom"  className="form-label">Prénom</label>
+              <input
+                id="prenom"
+                className={`form-control ${errors.prenom && 'is-invalid'}`}
+                {...register("prenom", {
+                  required: "remplir svp",
+                })}
+              />
+            
+              
+             <div className="invalid-feedback">
+              {errors.prenom && <span>Vous devez ecrire le nom </span>}
+            </div>
+
+           
+               <label htmlFor="prenom"  className="form-label">nom</label>
+              <input
+                 className={`form-control ${errors.nom && 'is-invalid'}`}
+                {...register("nom", {
+                  required: "remplir svp",
+                  minLength: { value: 3, message: "3 char min" },
+                  pattern: { value: /^[A-Za-z]+$/i, message: "pas chiffre" },
+                })}
+              />
+           
+        
+            <div className="invalid-feedback">
+              {errors.nom && <p role="alert">{errors.nom.message}</p>}
+            </div>
+
+            <button type="submit" className="btn btn-primary mt-3">GO</button>
+          </form>
+        </div>
+      </div>
     </>
-  )
+  );
 }
+
 ```
 ## correction
 ```jsx

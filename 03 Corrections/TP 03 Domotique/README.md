@@ -180,12 +180,13 @@ import { useState } from "react";
 import { Appareil } from "./models/Appareil";
 import AppareilComponent from "./components/AppareilComponent";
 
-// interface AjouterFormData {
-//   get(name: string): FormDataEntryValue | null;
-// }
+interface AjouterFormData {
+  get(name: string): string;
+}
 export default function App() {
   const [appareils, setAppareils] = useState<Appareil[]>([]);
-  const ajouter = (formData: any): void => {
+  const ajouter = (formData: AjouterFormData): void => {
+    const nom =formData.get("nom");
     const appareil = new Appareil(formData.get("nom"));
     // appareils.push(appareil);
     setAppareils([...appareils, appareil]);
