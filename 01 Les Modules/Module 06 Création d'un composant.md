@@ -1,16 +1,16 @@
 
 # Création du composant Personne.jsx
-Création du repertoir <code>models</code>
-Création du fichier <code>Personne.jsx</code>
+Création du repertoir <code>components</code>
+Création du fichier <code>PersonneComponent.jsx</code>
 
 ```
 |-- src
         |-- components
             |-- Personne.js
 ```
-
-```tsx
-export default function Personne({personne,indice,qui}) {
+## PersonneComponent.jsx
+```jsx
+export default function PersonneComponent({personne,indice,qui}) {
 
   return (
     <>
@@ -21,10 +21,10 @@ export default function Personne({personne,indice,qui}) {
 }
 ```
 
-# App.tsx
-```tsx
+## App.jsx
+```jsx
 import './App.css'
-import Personne from './models/Personne';
+import PersonneComponent from './components/PersonneComponent';
 export default function App() {
 const [personnes, setPersonnes] = useState([
   {prenom:'Brad',nom:'PITT'},
@@ -38,7 +38,7 @@ const [personnes, setPersonnes] = useState([
     <>
     {
       personnes.map((personne,indice) => 
-      <Personne 
+      <PersonneComponent 
       key={indice} 
       personne={personne} 
       indice={indice}
@@ -51,9 +51,37 @@ const [personnes, setPersonnes] = useState([
 
 ```
 
-# PersonneComponent.tsx
+## Partie en type script
+
+
+### Personne.ts
+```
+|-- src
+        |-- models
+            |-- Personne.ts
+```
+```ts
+export class Personne{
+   public prenom?:string;
+   public nom?:string;
+
+   // 3 signature decontructeur
+    constructor (  prenom:string,  nom:string){
+        this.prenom = prenom;
+        this.nom = nom;
+    }
+}
+```
+
+### PersonneComponent.tsx
+```
+|-- src
+        |-- components
+            |-- PersonneComponent.ts
+```
+
 ```tsx
-import Personne from "../models/Personne";
+import PersonneComponent from "../models/PersonneComponent";
 
 interface IpropsPersonne{
     p:Personne;
@@ -70,4 +98,42 @@ export default function PersonneComponent(props:IpropsPersonne){
         </>
     );
 }
+```
+### App.tsx
+```tsx
+
+import PersonneComponent from "./components/PersonneComponent";
+import  { Personne } from "./models/Personne";
+
+
+export default function App() {
+  const personnes:Personne[]=[
+    {prenom:'Brad',nom:'PITT'},
+    {prenom:'Tom',nom:'CRUISE'},
+    {prenom:'Nicolas',nom:'CAGE'}
+  ]
+  const qui =(indice:number):void=>{
+    console.log(indice);
+    console.log(personnes[indice])
+  }
+  return (
+    <>
+    <div className="container">
+      
+      {
+        personnes.map((personne,indice)=>
+        <PersonneComponent 
+        personne={personne} 
+        
+        indice={indice}
+        qui={qui}
+        key={indice} // personne.id
+        />)
+      }
+
+      </div>
+    </>
+  );
+}
+
 ```
