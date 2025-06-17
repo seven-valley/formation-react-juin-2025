@@ -118,7 +118,7 @@ const nouveauClients = personnes.filter(p => !clients.find(c => c.id === p.id));
 console.log(nouveauClients);
 
 // excercice 2
-const dejaClients = personnes.filter(p => !clients.find(c => c.id === p.id));
+const dejaClients = personnes.filter(p => clients.find(c => c.id === p.id));
 console.log(dejaClients);
 ```
 
