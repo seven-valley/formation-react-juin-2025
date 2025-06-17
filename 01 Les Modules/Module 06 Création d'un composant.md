@@ -1,5 +1,9 @@
 
-# Création du composant Personne.jsx
+# Création d'un composant 
+
+## Partie javaScript
+
+### Création du composant PersonneComponent.jsx
 Création du repertoir <code>components</code>
 Création du fichier <code>PersonneComponent.jsx</code>
 
@@ -8,7 +12,7 @@ Création du fichier <code>PersonneComponent.jsx</code>
         |-- components
             |-- Personne.js
 ```
-## PersonneComponent.jsx
+### PersonneComponent.jsx
 ```jsx
 export default function PersonneComponent({personne,indice,qui}) {
 
@@ -21,7 +25,7 @@ export default function PersonneComponent({personne,indice,qui}) {
 }
 ```
 
-## App.jsx
+### App.jsx
 ```jsx
 import './App.css'
 import PersonneComponent from './components/PersonneComponent';
@@ -52,6 +56,12 @@ const [personnes, setPersonnes] = useState([
 ```
 
 ## Partie en type script
+Création du repertoir <code>models</code>
+Création du fichier <code>Personne.ts</code>
+  
+Création du repertoir <code>components</code>
+Création du fichier <code>PersonneComponent.tsx</code>
+
 
 
 ### Personne.ts
