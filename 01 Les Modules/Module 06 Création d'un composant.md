@@ -91,7 +91,7 @@ export class Personne{
 ```
 
 ```tsx
-import PersonneComponent from "../models/PersonneComponent";
+import  { Personne } from "./models/Personne";
 
 interface IpropsPersonne{
     p:Personne;
