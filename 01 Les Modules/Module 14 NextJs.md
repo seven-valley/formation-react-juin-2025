@@ -10,7 +10,7 @@ npx create-next-app@latest first-next-app
 <img src="../img/14/01-install.png" width="400">
 
 
-voir eslint
+
 ```
 npm run dev
 ```
@@ -18,8 +18,7 @@ npm run dev
 page.tsx
 regular component
 
-console.log 
-dans le back
+
 
 ## Création d'une page
 ```
