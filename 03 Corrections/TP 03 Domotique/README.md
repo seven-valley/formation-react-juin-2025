@@ -181,12 +181,12 @@ import { Appareil } from "./models/Appareil";
 import AppareilComponent from "./components/AppareilComponent";
 
 interface AjouterFormData {
-  get(name: string): string;
+  get(name: string): FormDataEntryValue |null;;
 }
 export default function App() {
   const [appareils, setAppareils] = useState<Appareil[]>([]);
   const ajouter = (formData: AjouterFormData): void => {
-    const nom =formData.get("nom");
+   // const nom =formData.get("nom");
     const appareil = new Appareil(formData.get("nom"));
     // appareils.push(appareil);
     setAppareils([...appareils, appareil]);

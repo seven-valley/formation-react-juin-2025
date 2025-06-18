@@ -124,7 +124,7 @@ export default function App() {
         <div className="col-4">
           <form onSubmit={valider}>
             
-  <label htmlFor="prenom"  className="form-label">Prénom</label>
+              <label htmlFor="prenom"  className="form-label">Prénom</label>
               <input
                 id="prenom"
                 className={`form-control ${errors.prenom && 'is-invalid'}`}
@@ -132,8 +132,7 @@ export default function App() {
                   required: "remplir svp",
                 })}
               />
-            
-              
+                          
              <div className="invalid-feedback">
               {errors.prenom && <span>Vous devez ecrire le nom </span>}
             </div>

@@ -30,9 +30,9 @@ let data= {
 ## Et on souhaiterais avoir cela
 ```js
 let personnes = [
-    {nom: "PITT", "prenom": "Brad", "id1"},
-    {nom: "CAGE", "prenom": "Nicolas", "id2"},
-    {nom: "JOLIE", "prenom": "Angelina", "id3"}
+    {nom: "PITT", "prenom": "Brad", id:"id1"},
+    {nom: "CAGE", "prenom": "Nicolas", id:"id2"},
+    {nom: "JOLIE", "prenom": "Angelina", id:"id3"}
 ]
 ```
 
