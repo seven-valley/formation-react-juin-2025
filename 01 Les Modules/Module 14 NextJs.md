@@ -134,14 +134,15 @@ blog/[slug]/page.tsx
 ```tsx
 import Link from "next/link";
 
-export default function BlogPostPage() {
+export default function BlogPostPage({params}: {params: {slug: string}}) {
 
   return (<main>
   <h1>Blog Post Page</h1>
     <br /><br />
-      
+      {params.slug}
   </main>);
 }
+
 
 ```
 excercice ajouter le header 
