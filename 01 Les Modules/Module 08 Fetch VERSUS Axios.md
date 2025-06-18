@@ -81,7 +81,7 @@ console.log(response.data);
 ```
     
 
-## 16 - Axios & Comment gérer les erreures ?
+## 16 - Axios & Comment gérer les erreurs ?
 ```js
 async function getUser() {
   try {
