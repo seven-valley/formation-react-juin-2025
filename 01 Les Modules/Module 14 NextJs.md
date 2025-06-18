@@ -1,6 +1,15 @@
 # module 14 Next.js
 
-Le site
+Next.js est un framework basé sur React qui permet de créer des applications web modernes, performantes et SEO-friendly, en combinant :
+
+- Rendu côté serveur (SSR)  
+- Génération statique de pages (SSG)
+- Routage automatique
+- API intégrée
+- Support de TypeScript, Tailwind, etc
+
+
+Le site :
 [nextjs.org](https://nextjs.org/)
 
 ```
