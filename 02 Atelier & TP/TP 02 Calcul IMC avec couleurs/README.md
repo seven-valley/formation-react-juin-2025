@@ -14,3 +14,13 @@ $\color{red}{\text{danger}}$    rouge
 :four:  Si 30 &lt;**imc** &lt; 35  je suis en tranche **obésité** : $\color{red}{\text{danger}}$ rouge   
 :five:  Si 35 &lt;**imc** &lt; 40  je suis en tranche **obésité massive**  : $\color{black}{\text{secondary}}$ noir     
 :six:  Si  **imc** &gt; 40  je suis en tranche **obésité morbide**  $\color{blue}{\text{primary}}$  bleu    
+
+:seven: Afficher la tranche    
+:eight: Calculer le poids à atteindre  
+- si surpoids   
+  **poidIdeal** = **25** x taille x taille    
+- si maigreur    
+  **poidIdeal** = **18.5** x taille x taille
+     
+:nine: Calculer les kilogrammes à perdre ou prendre  
+**10** - Afficher Ces 2 objectif

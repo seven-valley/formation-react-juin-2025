@@ -1,4 +1,4 @@
-# TP 02 IMC sans bouton
+# TP 02b IMC sans bouton
 - enlever le bouton  
 - relier directement un champ à un useRef astuce  
 ```

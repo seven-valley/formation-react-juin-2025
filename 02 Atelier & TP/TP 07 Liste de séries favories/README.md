@@ -1,4 +1,4 @@
-# TP 08 - Mes Séries préférées
+# TP 07 - Mes Séries préférées
 <img src="../../img/tp/tp7.webp" width="400"> 
 
 

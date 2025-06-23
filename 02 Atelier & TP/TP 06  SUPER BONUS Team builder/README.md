@@ -1,4 +1,4 @@
-# TP Echo Team Builder
+# TP 06 Team Builder
 **live preview** :  
 [Tester le TP Echo](https://www.sevenvalley.fr/tp-javascript/tpe) 
 
