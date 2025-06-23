@@ -1,5 +1,11 @@
 # Plan de la formation
 
+
+## les TP ou Atelier
+<a href="https://sevenvalley.fr/tp-react/">
+les tp ou ateliers
+<img src="./img/img/boite.png" width="200">  
+</a>
 ## 01 - Présentation
 <img src="./img/01/module-1.png" width="200">  
 
