@@ -10,7 +10,7 @@ Création du fichier <code>PersonneComponent.jsx</code>
 ```
 |-- src
         |-- components
-            |-- Personne.js
+            |-- Personne.jsx
 ```
 ### PersonneComponent.jsx
 ```jsx
