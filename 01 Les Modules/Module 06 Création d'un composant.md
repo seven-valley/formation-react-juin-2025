@@ -9,8 +9,8 @@ Création du fichier <code>PersonneComponent.jsx</code>
 
 ```
 |-- src
-        |-- components
-            |-- Personne.jsx
+    |-- components
+          |-- Personne.jsx
 ```
 ### PersonneComponent.jsx
 ```jsx
