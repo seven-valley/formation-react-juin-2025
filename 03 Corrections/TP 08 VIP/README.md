@@ -70,11 +70,12 @@ function App() {
   const ajouter = async (formData) => {
     const prenom = formData.get('prenom')
     const nom = formData.get('nom')
-    const p = { prenom: prenom, nom: nom }
+    const p = { prenom: prenom, nom: nom ,status:true}
     const url2 = `${db}${noeud}.json`
-    const response = await axios.get(url2)
-    const id = response.data.id
+    const response = await axios.post(url2,p)
+    const id = response.data.name
     p.id =id
+    console.log(p)
     setPersonnes([...personnes,p])
   }
   const modifier = async(indice)=>{
@@ -82,6 +83,7 @@ function App() {
     const p = {status:!personnes[indice].status }
     console.log(p)
      const url2 = `${db}${noeud}/${id}.json`
+     console.log(url2)
      const response = await axios.patch(url2,p)
      console.log(response.data)
      personnes[indice].status = !personnes[indice].status
@@ -90,6 +92,7 @@ function App() {
   const enlever = async(indice)=>{
     const id = personnes[indice].id;
      const url2 = `${db}${noeud}/${id}.json`
+      console.log(url2)
      const response = await axios.delete(url2)
      personnes.splice(indice,1)
      setPersonnes([...personnes])
