@@ -1,7 +1,7 @@
 # Plan de la formation
 
 
-## les TP ou Atelier
+## les TP ou Ateliers
 <a href="https://sevenvalley.fr/tp-react/">
 <br>
 les tp ou ateliers
