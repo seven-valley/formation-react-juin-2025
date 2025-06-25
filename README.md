@@ -30,7 +30,7 @@ les tp ou ateliers
 - L’opérateur Spread … et Rest  
 
 
-## 03 - Le JavaScript Next Génération
+## 03 - Installation et création du premier projet
 <img src="./img/03/module-3.png" width="200">  
 
 - Installation de NodeJS  
