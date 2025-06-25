@@ -69,7 +69,7 @@ function App() {
 export default App
 ```
 
-# Produit.tsx
+# Produit.jsx
 ```tsx
 import { useParams } from "react-router-dom"
 import Nav  from "../components/Nav.tsx";
@@ -84,5 +84,28 @@ export default function Produit() {
     )  
   }
   ```
+
+  # Home.jsx
+```jsx
+import { Link, useNavigate } from "react-router-dom";
+import Nav from "../components/Nav";
+
+export default function Home(){
+    const id =42
+    const navigate = useNavigate()
+    const go =()=>{
+        navigate('/about')
+    }
+
+    return(
+        <>
+        <Nav />
+        <h1>Home</h1>
+        <Link to={`produit/${id}`}> produit 42</Link>
+        <button onClick={go}>Naviguez about</button>
+        </>
+    )
+}
+```
 
   
