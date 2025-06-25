@@ -1,47 +1,3 @@
-# TP 05 liste VIP
-- Créer une base real Time dans FireBase
-- Ajouter une personne
-- Afficher la liste des personnes
-- Enlever une personne
-- Modifier une personne avec PATCH
-
-```js
-const personne ={
-  prenom:'Brad',
-  nom:'PITT'
-  status:true
-}
-```
-
-# TrPersonne.jsx
-```jsx
-export default function TrPersonne({personne,indice,modifier,enlever}) {
-    return (
-        <tr className={`${personne.status ? 'table-danger' :'table-success'}`}>
-            <td>{personne.prenom}</td>
-            <td>{personne.nom}</td>
-            <td>
-                <button 
-                onClick={()=>enlever(indice)}
-                className="btn btn-danger">
-                    <i className="fa fa-trash"></i>
-                </button>
-            </td>
-
-            <td>
-                <button 
-                onClick={()=>modifier(indice)}
-                className="btn btn-warning">
-                    <i className="fa fa-check"></i>
-                </button>
-            </td>
-        </tr>
-    )
-}
-```
-
-# App.jsx :
-```jsx
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import TrPersonne from './components/TrPersonne';
@@ -177,6 +133,3 @@ function App() {
 }
 
 export default App
-
-```
-
