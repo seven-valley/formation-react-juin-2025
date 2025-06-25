@@ -3,10 +3,7 @@
 ```
 npm i react-router-dom
 ```
-## Ajouter une page modifier au VIP cocktail
-- envoyer l id de la personne à la page modifier
-- renommer la personne
-- intégrer la maquette
+
 
 
 https://reactrouter.com/en/main/components/nav-link  
