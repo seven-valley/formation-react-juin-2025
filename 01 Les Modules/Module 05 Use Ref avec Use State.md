@@ -38,7 +38,7 @@ export default function App() {
 
 # useRef VERSUS UseState
 Afin de bien comprendre la différence entre <code>useState</code> et <code>useRef</code>    
-Voici un exmple avec 2 compteurs    
+Voici un exemple avec 2 compteurs    
 Nous pouvons constater que la modification de <code>useRef</code> **ne** déclencle **pas** un **"Rendering"** de la vue HTML.
 
 <img src="../img/03/versus.png" width="300"/>

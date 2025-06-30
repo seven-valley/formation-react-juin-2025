@@ -1,5 +1,83 @@
 # TP 2 correction
 
+# Version Type script
+
+```ts
+import { useRef, useState } from "react";
+
+export default function App() {
+  const [conso,setConso] = useState<string>('') 
+  const km =useRef<HTMLInputElement>(null);
+  const litre = useRef<HTMLInputElement>(null);
+  const calculer =()=>{
+    const litre2 = litre.current?.value;
+    const km2 = km.current?.value;
+    if ((litre2 && litre2.length) && (km2 && km2.length)) {
+      const conso = (Number(litre.current?.value) * 100) / Number(km.current?.value);
+      
+      if (isNaN(conso)) {
+        setConso('');
+      } else {
+        setConso(conso.toFixed(1));
+      }
+    } else {
+      setConso('');
+    }
+  }
+  // la partie jsx ou tsx
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <i className="fa-solid fa-car me-3"></i>
+            Voiture Conso
+          </a>
+        </div>
+      </nav>
+      <div className="container">
+        <div className="row">
+          <div className="col-4 pt-4">
+            <h1 className="h3">Calculer votre consomation</h1>
+            <input
+            ref={litre}
+              aria-label="Litres"
+              className="form-control"
+              placeholder="Litres d'essence"
+              onChange={calculer}
+            />
+
+            <input
+            ref={km}
+              aria-label="Taille"
+              className="form-control my-3"
+              placeholder="Kilomètres"
+              onChange={calculer}
+            />
+          { conso.length > 0 &&
+            <div className="alert alert-success mt-4" role="alert">
+              <h3>
+                Conso : <b>{conso}</b> Litres/100km
+              </h3>
+              <p>Normal</p>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <footer className="py-5 bg-dark">
+        <div className="container px-4 px-lg-5">
+          <p className="m-0 text-center text-white">
+            Copyright &copy; Seven Valley 2024
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}
+```
+
 # Correction Sans maquette
 ```jsx
 import { useState, useRef } from 'react';
