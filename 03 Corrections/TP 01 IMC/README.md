@@ -62,16 +62,11 @@ export default function App() {
 
 # Version 2 avec Type Script
 ```tsx
-// App.jsx
-import { useState } from "react";
-import  Info  from "./models/Info"
-  interface ajouterForm{
-    get(nom:string):string
-  }
+// App.tsx
 export default function App() {
   const [info, setInfo] = useState<Info>( new Info());
 
-  const calculer = (formData: ajouterForm) => {
+  const calculer = (formData: FormData) => {
     console.log('aaa');
     const poids = formData.get("poids");
     const taille = formData.get("taille");
@@ -135,7 +130,7 @@ export default function App() {
 ## BO Info.ts
 
 ```tsx
-// ./models.ts
+// ./models/Info.ts
 export default class Info{
     public imc: string = '';
     public tranche?: string;
