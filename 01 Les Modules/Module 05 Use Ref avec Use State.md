@@ -41,36 +41,45 @@ Afin de bien comprendre la différence entre <code>useState</code> et <code>useR
 Voici un exmple avec 2 compteurs    
 Nous pouvons constater que la modification de <code>useRef</code> **ne** déclencle **pas** un **"Rendering"** de la vue HTML.
 
+
+
 ```jsx
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function App() {
-  const nombre = useRef(0); //nombre.current =0
-  const [valeur,setValeur]= useState<number>(0);
-  const ajouterUseState =()=>{
-    setValeur(valeur +1);
-    console.log(valeur +1);
-  }
-  const ajouterUseRef=()=>{
-    nombre.current = nombre.current +1;
-    console.log(nombre.current)
-  }
+  const compteurRef = useRef<number>(10); // compteur.current =0
+  const [compteurState, setCompteurState] = useState<number>(0);
+  const ajouterRef = () => {
+    compteurRef.current = compteurRef.current + 1;
+    console.log(compteurRef.current);
+  };
+  const ajouterState = () => {
+    setCompteurState(compteurState + 1);
+  };
+  // la partie jsx ou tsx
   return (
-    <>
-  <button onClick={ajouterUseRef}>Ajouter use Ref</button>
-  <br /><br />
-  <button onClick={ajouterUseState}>Ajouter use State</button>
+    <div className="container">
+      <h1> useRef : {compteurRef.current} </h1>
+      <button onClick={ajouterRef} className="btn btn-danger">
+        Ajouter UseRef
+      </button>
 
-  <h3>use Ref : {nombre.current}</h3>
-  <h3>use State : {valeur}</h3>
-    </>
+      <br />
+      <br />
+      <br />
+      <button onClick={ajouterState} className="btn btn-primary">
+        Ajouter UseState
+      </button>
+      <h1> useState : {compteurState} </h1>
+    </div>
   );
 }
+
 ```
 
 # Le 2 ways binding 
 
-
+<img src="../img/03/versus.png" width="300"/>
 
 ```jsx
 import { useRef, useState } from "react"
