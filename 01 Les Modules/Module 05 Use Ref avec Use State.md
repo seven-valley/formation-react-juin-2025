@@ -41,7 +41,7 @@ Afin de bien comprendre la différence entre <code>useState</code> et <code>useR
 Voici un exmple avec 2 compteurs    
 Nous pouvons constater que la modification de <code>useRef</code> **ne** déclencle **pas** un **"Rendering"** de la vue HTML.
 
-
+<img src="../img/03/versus.png" width="300"/>
 
 ```jsx
 import { useRef, useState } from "react";
@@ -79,7 +79,7 @@ export default function App() {
 
 # Le 2 ways binding 
 
-<img src="../img/03/versus.png" width="300"/>
+
 
 ```jsx
 import { useRef, useState } from "react"
