@@ -137,23 +137,24 @@ export default function App() {
 ```tsx
 // ./models.ts
 export default class Info{
-     public imc?:string;
-    public tranche?:string;
-    public poids?:string;
-    public taille?:string;
-    public classe?:string;
+    public imc: string = '';
+    public tranche?: string;
+    public poids?: string;
+    public taille?: string;
+    public classe?: string;
+
     constructor(
-         imc?:string,
-         tranche?:string,
-         poids?:string,
-         taille?:string,
-         classe?:string
-    ){
-        this.imc =imc;
-        this.tranche= tranche;
+        imc: string = '',
+        tranche?: string,
+        poids?: string,
+        taille?: string,
+        classe?: string
+    ) {
+        this.imc = imc;
+        this.tranche = tranche;
         this.poids = poids;
         this.taille = taille;
-        this.classe=classe
+        this.classe = classe;
     }
 }
 ```
