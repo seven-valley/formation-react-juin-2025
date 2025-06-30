@@ -68,94 +68,29 @@ export default function App() {
 }
 ```
 
-# Le 2 ways binding en 4 étapes 
-## :one: Epape 1
-Utilisation de <code>onChange</code> sur input
+# Le 2 ways binding 
+
+
+
 ```jsx
-import { useRef } from "react";
+import { useRef, useState } from "react"
 
-export default function App() {
-  const afficher=(event)=>{
-    console.log(event.target.value); 
-  }
-  return (
-      <input name="prenom"   onChange={afficher}/>
-  );
-}
-```
-## :two: Epape 2
-Mise en place de **2 champs** input  
-```jsx
-import { useRef } from "react";
-
-export default function App() {
-  const afficher=(event)=>{
-    // le nom du champ :
-    console.log(event.target.name); // prenom
-    console.log(event.target.value); // 'abc'
-  }
-  return (
-    <>
-      <input name="prenom"  placeholder="Votre prénom" onChange={afficher}/>
-      <br /><br />
-      <input name="nom"  placeholder="Votre nom" onChange={afficher}/>
-    </>
-  );
-}
-```
-
-## :three: Epape 3
-```jsx
-import { useState,useRef } from "react";
-
-export default function App() {
-  const [message,SetMessage]=useState('');
-  const prenom = useRef('');
-  const nom = useRef('');
-  const afficher=(event)=>{
-    // le nom du champ :
-    if (event.target.name =='prenom' ){
-      prenom.current = event.target.value;
-    }else{
-      nom.current = event.target.value.toUpperCase();
-    }
-    SetMessage(`${prenom.current} ${nom.current}`);
-
-  }
-  return (
-    <>
-      <input name="prenom"  placeholder="Votre prénom" onChange={afficher}/>
-      <br /><br />
-      <input name="nom"  placeholder="Votre nom" onChange={afficher}/>
-      <h1>{message}</h1>
-    </>
-  );
-}
-
-```
-
-##  :four: Epape 4
-### Version épurée et simplifiée :rocket:
-je link les champs input directement avec <code>ref={prenom}</code>  
-Ne pas oublie le <code>.value</code> dans  <code>prenom.current.value</code>  
-```jsx
-import { useState,useRef } from 'react';
-import './App.css'
-export default function App() {
-  const prenom = useRef('');
-  const nom = useRef('');
-  const [message,setmessage]=useState('') 
+export default function App(){
+  const [fullName,setFullname]= useState<string>('');
+  const prenom = useRef<HTMLInputElement>(null);
+  const nom = useRef<HTMLInputElement>(null);
   const afficher =()=>{
+    console.log(prenom.current?.value)
+    console.log(nom.current?.value)
+    setFullname(`${prenom.current?.value } ${nom.current?.value }`)
 
-   setmessage(`${prenom.current.value} ${nom.current.value}`)
   }
-  return (
+  return(
     <>
-    <input ref={prenom}  onChange={afficher} />
-    <input ref={nom} onChange={afficher} />
-    <h1>{message}</h1>
-    </>
-  )
-}
+    <input ref={prenom} onChange={afficher} />
+    <input ref={nom}   onChange={afficher}/>
+    <h1>{fullName}</h1>
 
+    </>)
+}
 ```
