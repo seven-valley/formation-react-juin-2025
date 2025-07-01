@@ -2,7 +2,9 @@
 <img src="../../img/tp/tp7.webp" width="400"> 
 
 
-:one: Création du component <code>TrSearch.jsx</code>
+:one: Création des components <code>TrSearch.jsx</code> <code>TrFav.jsx</code> 
+
+
 ```html
 <tr>
     <td>Foundation</td>
