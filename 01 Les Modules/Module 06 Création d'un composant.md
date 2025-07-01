@@ -154,3 +154,67 @@ export default function App() {
 }
 
 ```
+
+# AVEC Type Script
+```tsx
+import { useEffect, useState } from "react";
+import Personne from "./components/Personne";
+type TPersonne={
+  prenom:string;
+  nom:string;
+}
+export default function App() {
+ const [personnes, setPersonnes] = useState<TPersonne[]>([]);
+useEffect(()=>{
+const personnes2:TPersonne[]=[];
+const p:TPersonne = {prenom:'Brad',nom:'PITT'} ;
+personnes2.push(p)
+setPersonnes(personnes2)
+},[])
+
+const qui =(indice:number): void=>{
+  console.log(indice)
+  console.log(personnes[indice])
+}
+const enlever=(indice:number)=>{
+  personnes.splice(indice,1) // 1 nb d'élément a effacer
+  setPersonnes([...personnes]);
+}
+  // la partie jsx ou tsx
+  return (
+   <>
+
+   {
+    personnes.map((personne,i)=><Personne 
+      prenom={personne.prenom}
+      nom={personne.nom}
+      indice={i}
+      qui={qui}
+      enlever={enlever}
+      key={i}
+      />)
+   }
+   </>
+   
+  );
+}
+```
+
+```tsx
+type IPropsPersonne={
+    prenom:string;
+    nom:string;
+    indice:number;
+    qui:(indice:number)=>void;
+    enlever:(indice:number)=>void;
+}
+export default function Personne({prenom,nom,indice,qui,enlever}:IPropsPersonne){
+    return(
+        <>
+        <h1>Je suis {prenom} {nom}</h1>
+        <button onClick={()=>qui(indice)}>QUI ?</button>
+        <button onClick={()=>enlever(indice)}>Enlever</button>
+        </>
+    )
+}
+```
