@@ -126,10 +126,12 @@ export default function Builder() {
 
                 </tbody>
               </table>
+          
+          
           </div>
         </div>
       </div>
-     
+      <Footer />
     </>
   )
 }

@@ -91,7 +91,7 @@ export default function Detail() {
           </div>
         </div>
       </div>
-      
+      <Footer />
     </>
   )
 }

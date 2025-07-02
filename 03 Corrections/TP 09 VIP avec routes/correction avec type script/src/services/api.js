@@ -1,4 +1,4 @@
-const url = 'https://ib-vip-default-rtdb.europe-west1.firebasedatabase.app/';
+const url = 'https://eni-cocktail-vip-xxx-default-rtdb.europe-west1.firebasedatabase.app/';
 const noeud = 'personnes';
 
 export const getGuests = async () => {

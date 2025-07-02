@@ -13,7 +13,7 @@ export default function Error() {
           </div>
         </div>
       </div>
-      
+      <Footer />
     </>
   )
 }
