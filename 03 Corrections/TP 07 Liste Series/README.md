@@ -80,7 +80,7 @@ export default function App() {
     }
   },[])
   
-  const getSerie=async(id:string)=>{
+  const getSerie=async(id:string): Promise<any> =>{
     const url2 =`${url}&i=${id}`
     const response = await fetch(url2)
     const serie = await response.json() 
