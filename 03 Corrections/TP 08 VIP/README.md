@@ -185,6 +185,16 @@ export default App
 
 # version type script
 
+## IPersonne.ts
+```ts
+export default interface IPersonne{
+    prenom:string
+    nom:string
+    id:string
+    status:boolean
+}
+```
+
 ## App.tsx
 ```tsx
 import axios from 'axios';
@@ -363,3 +373,4 @@ export default function TrPersonne({personne,indice,modifier,enlever}:TPropsPers
     )
 }
 ```
+
