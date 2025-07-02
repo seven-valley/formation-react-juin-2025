@@ -242,8 +242,9 @@ function App() {
      console.log(url2)
      const response = await axios.patch(url2,p)
      console.log(response.data)
-     personnes[indice].status = !personnes[indice].status
-     setPersonnes([...personnes])
+     const personnes2 = [...personnes]
+     personnes2[indice].status = !personnes2[indice].status
+     setPersonnes(personnes2)
   }
   const enlever = async(indice:number)=>{
     const id = personnes[indice].id;
@@ -251,8 +252,9 @@ function App() {
       console.log(url2)
      const response = await axios.delete(url2)
      console.log(response.data)
-     personnes.splice(indice,1)
-     setPersonnes([...personnes])
+      const personnes2 = [...personnes]
+     personnes2.splice(indice,1)
+     setPersonnes(personnes2)
   }
   return (
     <>
@@ -337,6 +339,7 @@ function App() {
 }
 
 export default App
+
 ```
 
 ## TrPersonne.tsx
